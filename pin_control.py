@@ -36,7 +36,7 @@ def turnOnFan(pin):
 
 def openWindow(pin):
 	start = time.time()
-    now = time.time()
+	now = time.time()
 	duty = 0.001 + 0.0001*float(2)
 	while now-start < 1:
 		GPIO.output(lampSignalPin, GPIO.HIGH)
@@ -47,7 +47,7 @@ def openWindow(pin):
 		
 def openDoor(pin):
 	start = time.time()
-    now = time.time()
+	now = time.time()
 	duty = 0.001 + 0.0001*float(2)
 	while now-start < 1:
 		GPIO.output(lampSignalPin, GPIO.HIGH)
