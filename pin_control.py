@@ -19,18 +19,18 @@ def getHumidityAndTemperature(pin):
 # LAMP
 
 def turnOffLamp(pin):
-	GPIO.output(lampSignalPin, GPIO.LOW)
+	GPIO.output(pin, GPIO.LOW)
 	
 def turnOnLamp(pin):
-	GPIO.output(lampSignalPin, GPIO.HIGH)
+	GPIO.output(pin, GPIO.HIGH)
 	
 #FAN
 
 def turnOffFan(pin):
-	GPIO.output(lampSignalPin, GPIO.LOW)
+	GPIO.output(pin, GPIO.LOW)
 	
 def turnOnFan(pin):
-	GPIO.output(lampSignalPin, GPIO.HIGH)
+	GPIO.output(pin, GPIO.HIGH)
 
 # WINDOWS/DOORS
 
@@ -39,9 +39,9 @@ def openWindow(pin):
 	now = time.time()
 	duty = 0.001 + 0.0001*float(2)
 	while now-start < 1:
-		GPIO.output(lampSignalPin, GPIO.HIGH)
+		GPIO.output(pin, GPIO.HIGH)
 		time.sleep(duty)
-		GPIO.output(lampSignalPin, GPIO.LOW)	
+		GPIO.output(pin, GPIO.LOW)	
 		time.sleep(0.02-duty)
 		now = time.time()
 		
@@ -50,9 +50,9 @@ def openDoor(pin):
 	now = time.time()
 	duty = 0.001 + 0.0001*float(2)
 	while now-start < 1:
-		GPIO.output(lampSignalPin, GPIO.HIGH)
+		GPIO.output(pin, GPIO.HIGH)
 		time.sleep(duty)
-		GPIO.output(lampSignalPin, GPIO.LOW)	
+		GPIO.output(pin, GPIO.LOW)	
 		time.sleep(0.02-duty)
 		now = time.time()	
 		
@@ -61,9 +61,9 @@ def closeWindow(pin):
 	now = time.time()
 	duty = 0.001 + 0.0001*float(-7)	
 	while now-start < 1:
-		GPIO.output(lampSignalPin, GPIO.HIGH)
+		GPIO.output(pin, GPIO.HIGH)
 		time.sleep(duty)
-		GPIO.output(lampSignalPin, GPIO.LOW)
+		GPIO.output(pin, GPIO.LOW)
 		time.sleep(0.02-duty)
 		now = time.time()
 		
@@ -72,8 +72,8 @@ def closeDoor(pin):
 	now = time.time()
 	duty = 0.001 + 0.0001*float(-7)	
 	while now-start < 1:
-		GPIO.output(lampSignalPin, GPIO.HIGH)
+		GPIO.output(pin, GPIO.HIGH)
 		time.sleep(duty)
-		GPIO.output(lampSignalPin, GPIO.LOW)
+		GPIO.output(pin, GPIO.LOW)
 		time.sleep(0.02-duty)
 		now = time.time()
