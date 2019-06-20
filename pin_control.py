@@ -2,7 +2,60 @@ import RPi.GPIO as GPIO
 import time
 import os
 
+# Dictionary containing named doors and windows and their respective pins
+doors = {'front':2, 'living_bed1':3, 'living_bath':4, 'living_kitchen':17, 'bed1_bath':27, 'bed2_bath':22, 'back':10}
+windows = {'living1':9, 'living2':11, 'bed1_1':14, 'bed1_2':15, 'bed2_1':18, 'bed2_2':23, 'dining':24, 'kitchen':25}
+
+# SETUP PINS
+
+def setup():
+	GPIO.setmode(GPIO.BCM)
+	
+def setupPin(pin):
+	GPIO.setup(pin, GPIO.OUT)
+	# this line might not be necessary
+	GPIO.output(pin, GPIO.LOW)
+
+def setupDoors():
+	setup()
+	for pin in doors.values():
+		setupPin(pin)
+
+def setupWindows():
+	setup()
+	for pin in windows.values():
+		setupPin(pin)
+
+def setupALL():
+	setup()
+	setupDoors()
+	setupWindows()
+
 # Methods assume the pin in use has been setup
+
+def openAllDoors():
+	for pin in doors.values():
+		openDoor(pin)
+
+def closeAllDoors():
+	for pin in doors.values():
+		closeDoor(pin)
+
+def openAllWindows():
+	for pin in windows.values():
+		openWindow(pin)
+
+def closeAllWindows():
+	for pin in windows.values():
+		closeWindow(pin)
+
+def openAll():
+	openAllDoors()
+	openAllWindows()
+
+def closeAll():
+	closeAllDoors()
+	closeAllWindows()
 
 # HUMIDITY/TEMPERATURE SENSOR
 
