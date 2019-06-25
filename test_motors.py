@@ -3,16 +3,18 @@ import time
 import os
 
 from pin_control.py import *
+from sequences.py import *
 
-def 
 		
 if __name__ == '__main__':
-	setupALL():
+	setupALL()
 	
 	openAllWindows()
 	openAllDoors()
 	closeAllWindows()
 	closeAllDoors()
+	
+	sequence_random()
 	
 	try:
 		while True:
@@ -35,21 +37,21 @@ if __name__ == '__main__':
 					openDoor(doors[word[2]])
 				elif word[1] == 'window':
 					openWindow(windows[word[2]])
-				else
+				else:
 					print('Incorrect input.')
 			elif word[0] == 'close':
 				if word[1] == 'door':
 					closeDoor(doors[word[2]])
 				elif word[1] == 'window':
 					closeWindow(windows[word[2]])
-				else
+				else:
 					print('Incorrect input.')
-			else
+			else:
 				print('Incorrect input.')
 	
 	except KeyboardInterrupt:
-        print("Keyboard interrupt.")
-    except Exception as e: 
-    	print(e)
-    finally:
-        GPIO.cleanup()
+		print("Keyboard interrupt.")
+	except Exception as e: 
+		print(e)
+	finally:
+		GPIO.cleanup()
