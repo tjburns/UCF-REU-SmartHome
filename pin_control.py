@@ -4,9 +4,9 @@ import os
 import Adafruit_DHT
 
 # Dictionary containing named doors and windows and their respective pins
-motor_names = {1:'front door', 2:'living-bedroom1 door', 3:'living-bathroom door', 4:'living-kitchen door', 5:'bed1-bathroom door', 6:'bed2-bathroom door', 7:'back door', 					8:'living window1', 9:'living window2', 10:'bedroom1 window1', 11:'bedroom1 window2', 12:'bedroom2 window1', 13:'bedroom2 window2', 14:'dining window',15:'kitchen window'}
+motor_names = {1:'front door', 2:'living-bedroom1 door', 3:'living-bathroom door', 4:'living-kitchen door', 5:'bed1-bathroom door', 6:'bed2-bathroom door', 7:'back door', 					8:'living window1', 9:'living window2', 10:'bedroom1 window1', 11:'bedroom1 window2', 12:'bedroom2 window1', 13:'bedroom2 window2', 14:'dining window',0:'kitchen window'}
 motor_states = {1:'closed', 2:'closed', 3:'closed', 4:'closed', 5:'closed', 6:'closed', 7:'closed', 
-				8:'closed', 9:'closed', 10:'closed', 11:'closed', 12:'closed', 13:'closed', 14:'closed', 15:'closed', 15:'closed'}
+				8:'closed', 9:'closed', 10:'closed', 11:'closed', 12:'closed', 13:'closed', 14:'closed', 15:'closed', 0:'closed'}
 
 # SETUP PINS
 
@@ -21,7 +21,7 @@ def setupPin(pin):
 def setupDoorsAndWindows():
 	setup()
 	for pin in motor_states:
-		setupPin(pin)
+		setupPin(int(pin))
 
 def setupALL():
 	setup()
@@ -82,20 +82,20 @@ def motorClose(pin):
 # Methods assume the pin in use has been setup
 
 def openAllDoors():
-	for pin in range(1,8):
+	for pin in range(0,7):
 		motorOpen(pin)
 
 def closeAllDoors():
-	for pin in range(1,8):
+	for pin in range(0,7):
 		motorClose(pin)
 
 def openAllWindows():
-	for pin in range(8,16):
-		openWindow(pin)
+	for pin in range(7,15):
+		motorOpen(pin)
 
 def closeAllWindows():
-	for pin in (8,16):
-		closeWindow(pin)
+	for pin in (7,15):
+		motorClose(pin)
 
 def openAll():
 	openAllDoors()

@@ -2,22 +2,25 @@ import RPi.GPIO as GPIO
 import time
 import os
 
-from pin_control.py import *
-from sequences.py import *
+from pin_control import *
+#from sequences import *
 
 		
 if __name__ == '__main__':
+	print('setting up pins')
 	setupALL()
 	
-	openAllWindows()
-	openAllDoors()
-	closeAllWindows()
-	closeAllDoors()
 	
-	sequence_random()
+	#openAllWindows()
+	#openAllDoors()
+	#closeAllWindows()
+	#closeAllDoors()
+	
+	#sequence_random()
 	
 	try:
 		while True:
+			print('Enter desired operation')
 			op = input().lower()
 			words = op.split()
 			if op == 'open all':
@@ -32,22 +35,14 @@ if __name__ == '__main__':
 				openAllWindows()
 			elif op == 'close all windows':
 				closeAllWindows()
-			elif word[0] == 'open':
-				if word[1] == 'door':
-					openDoor(doors[word[2]])
-				elif word[1] == 'window':
-					openWindow(windows[word[2]])
-				else:
-					print('Incorrect input.')
-			elif word[0] == 'close':
-				if word[1] == 'door':
-					closeDoor(doors[word[2]])
-				elif word[1] == 'window':
-					closeWindow(windows[word[2]])
-				else:
-					print('Incorrect input.')
+			elif words[0] == 'open':
+				#open based on pin number
+				motorOpen(int(words[1]))
+			elif words[0] == 'close':
+                            #close based on pin number
+				motorOpen(int(words[1]))
 			else:
-				print('Incorrect input.')
+			    print('Incorrect input.')
 	
 	except KeyboardInterrupt:
 		print("Keyboard interrupt.")
