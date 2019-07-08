@@ -13,7 +13,7 @@ def closeMotor(pin):
     elif(pin == 1):
         kit.servo[pin].angle = 57
     elif(pin == 2):
-        kit.servo[pin].angle = 50
+        kit.servo[pin].angle = 55
     elif(pin == 3):
         kit.servo[pin].angle = 70
     elif(pin == 4):
@@ -24,9 +24,9 @@ def closeMotor(pin):
         kit.servo[pin].angle = 62
     #windows
     elif(pin == 8):
-        kit.servo[pin].angle = 60
+        kit.servo[pin].angle = 65
     elif(pin == 9):
-        kit.servo[pin].angle = 55
+        kit.servo[pin].angle = 56
     elif(pin == 10):
         kit.servo[pin].angle = 69
     elif(pin == 11):
@@ -34,7 +34,7 @@ def closeMotor(pin):
     elif(pin == 12):
         kit.servo[pin].angle = 47
     elif(pin == 13):
-        kit.servo[pin].angle = 55
+        kit.servo[pin].angle = 56
     elif(pin == 14):
         kit.servo[pin].angle = 60
     elif(pin == 15):
@@ -97,15 +97,16 @@ def openMotor(pin):
  # 13 : Living Rm, 3 ft.
  # 14 : Kitchen, 3 ft.
  # 15 : Bedroom 1, 3 ft.
-"""
+
 while(True):
+    
     openMotor(0)
-    openMotor(1)
-    openMotor(2)
-    openMotor(3)
+    #openMotor(1)
+    #openMotor(2)
+    #openMotor(3)
     openMotor(4)
     openMotor(5)
-    openMotor(6)
+    #openMotor(6)
     
     openMotor(8)
     openMotor(9)
@@ -119,12 +120,12 @@ while(True):
     time.sleep(5)
     
     closeMotor(0)
-    closeMotor(1)
-    closeMotor(2)
-    closeMotor(3)
+    #closeMotor(1)
+    #closeMotor(2)
+    #closeMotor(3)
     closeMotor(4)
     closeMotor(5)
-    closeMotor(6)
+    #closeMotor(6)
     
     closeMotor(8)
     closeMotor(9)
@@ -138,7 +139,8 @@ while(True):
     time.sleep(5)
 """
 while(True):
-    openMotor(13)
+    openMotor(6)
     time.sleep(3)
-    closeMotor(13)
+    closeMotor(6)
     time.sleep(3)
+"""
