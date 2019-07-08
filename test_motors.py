@@ -5,20 +5,30 @@ import Adafruit_DHT
 from adafruit_servokit import ServoKit
 
 from pin_control import *
-#from sequences import *
+from sequences import *
 
 		
 if __name__ == '__main__':
-	print('setting up pins')
+	#print('setting up pins')
 	#setupALL()
 	
 	#openAllWindows()
 	#openAllDoors()
 	#closeAllWindows()
 	#closeAllDoors()
-	
-	#sequence_random()
-	
+    
+        closeAll()
+        while True:
+            
+            sequence_random()
+            
+            print()
+            for i in range(0,30):
+                #print('Next action in: ' + str(i)+'/300', flush=True)
+                time.sleep(1)
+
+		
+        """
 	try:
 		while True:
 			print('Enter desired operation')
@@ -59,3 +69,4 @@ if __name__ == '__main__':
 		print(e)
 	finally:
 		GPIO.cleanup()
+		"""
