@@ -33,10 +33,76 @@ def turnOnFan(pin):
 # WINDOWS/DOORS
 
 def motorOpen(pin):
-	kit.servo[pin].angle = 180
+	#doors
+    if(pin == 0):
+        kit.servo[pin].angle = 180
+    elif(pin == 1):
+        kit.servo[pin].angle = 180
+    elif(pin == 2):
+        kit.servo[pin].angle = 180
+    elif(pin == 3):
+        kit.servo[pin].angle = 180
+    elif(pin == 4):
+        kit.servo[pin].angle = 180
+    elif(pin == 5):
+        kit.servo[pin].angle = 180
+    elif(pin == 6):
+        kit.servo[pin].angle = 180
+    #windows
+    elif(pin == 8):
+        kit.servo[pin].angle = 180
+    elif(pin == 9):
+        kit.servo[pin].angle = 180
+    elif(pin == 10):
+        kit.servo[pin].angle = 180
+    elif(pin == 11):
+        kit.servo[pin].angle = 170
+    elif(pin == 12):
+        kit.servo[pin].angle = 180
+    elif(pin == 13):
+        kit.servo[pin].angle = 165
+    elif(pin == 14):
+        kit.servo[pin].angle = 180
+    elif(pin == 15):
+        kit.servo[pin].angle = 159
+    else:
+        kit.servo[pin].angle = 180
 		
 def motorClose(pin):
-	kit.servo[pin].angle = 60
+	#doors
+    if(pin == 0):
+        kit.servo[pin].angle = 60
+    elif(pin == 1):
+        kit.servo[pin].angle = 57
+    elif(pin == 2):
+        kit.servo[pin].angle = 55
+    elif(pin == 3):
+        kit.servo[pin].angle = 70
+    elif(pin == 4):
+        kit.servo[pin].angle = 60
+    elif(pin == 5):
+        kit.servo[pin].angle = 60
+    elif(pin == 6):
+        kit.servo[pin].angle = 62
+    #windows
+    elif(pin == 8):
+        kit.servo[pin].angle = 65
+    elif(pin == 9):
+        kit.servo[pin].angle = 56
+    elif(pin == 10):
+        kit.servo[pin].angle = 69
+    elif(pin == 11):
+        kit.servo[pin].angle = 60
+    elif(pin == 12):
+        kit.servo[pin].angle = 47
+    elif(pin == 13):
+        kit.servo[pin].angle = 56
+    elif(pin == 14):
+        kit.servo[pin].angle = 60
+    elif(pin == 15):
+        kit.servo[pin].angle = 46
+    else:
+        kit.servo[pin].angle = 60
 		
 # Methods assume the pin in use has been setup
 
