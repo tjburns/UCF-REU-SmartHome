@@ -45,10 +45,12 @@ while(True):
             print(pin)
             checkTemp(pin)
             temp = 0
-            if humidity is None or temperature is None:
+            if humidity is None 
+            	# bad data?
+            	humidity = -1
+            if temperature is None:
                 # bad data?
                 temp = -1
-                humidity = -1
             else:
                 temp = (temperature * 9.0 / 5.0) + 32
             
