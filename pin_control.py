@@ -9,7 +9,7 @@ from adafruit_servokit import ServoKit
 kit = ServoKit(channels=16)
 
 # Dictionary containing named doors and windows and their respective pins
-motor_names = {0:'bedroom2 - bathroom door', 1:'bedroom1 - living room door', 2:'living room - kitchen door', 3:'living - bathroom door', 4:'bedroom1 - bathroom door', 5:'living room front door', 6:'bedroom1 back door',
+motor_names = {0:'bedroom2 - bathroom door', 1:'bedroom1 - living room door', 2:'living room - kitchen door', 3:'living - bathroom door', 4:'bedroom1 - bathroom door', 5:'living room front door', 6:'bedroom1 back door', 7:'nothing xd',
                8:'bedroom1 - 2ft window', 9:'living room - 2ft window', 10:'bedroom2 - 2ft window', 11:'kitchen - 2ft window', 12:'bedroom2 - 3ft window', 13:'living room - 3ft window', 14:'kitchen - 3ft window', 15:'bedroom1 - 3ft window'}
 motor_states = {0:'closed', 1:'closed', 2:'closed', 3:'closed', 4:'closed', 5:'closed', 6:'closed', 7:'closed', 
 				8:'closed', 9:'closed', 10:'closed', 11:'closed', 12:'closed', 13:'closed', 14:'closed', 15:'closed'}
