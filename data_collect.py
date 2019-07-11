@@ -71,7 +71,7 @@ fan_state = 1
 try:
     while(True):
         #getTemp(18)
-        with open("random_dataset.txt", "a") as datafile:
+        with open("random_dataset2.txt", "a") as datafile:
             datafile.write('\n')
             datafile.write(str(datetime.now()) + '\t')
             
