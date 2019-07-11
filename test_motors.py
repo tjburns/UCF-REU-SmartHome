@@ -1,24 +1,46 @@
 import RPi.GPIO as GPIO
 import time
+from datetime import datetime
 import os
 import Adafruit_DHT
 from adafruit_servokit import ServoKit
 
 from pin_control import *
-#from sequences import *
+from sequences import *
 
 		
 if __name__ == '__main__':
-	print('setting up pins')
+	#print('setting up pins')
 	#setupALL()
 	
 	#openAllWindows()
 	#openAllDoors()
 	#closeAllWindows()
 	#closeAllDoors()
-	
-	#sequence_random()
-	
+    
+        closeAll()
+        while True:
+            
+            sequence_random()
+            
+            with open("motor_states.txt", "a") as motors:
+                motors.write(str(datetime.now()) + '\t')
+                
+                print()
+                for i in motor_states:
+                    print(motor_states[i] + '\t', end = '')
+                    motors.write(motor_states[i] + '\t')
+                
+                print()
+                motors.write('\n')
+            
+            print()
+            for i in range(0,30):
+                #print('Next action in: ' + str(i)+'/300', flush=True)
+                time.sleep(1)
+
+		
+        """
 	try:
 		while True:
 			print('Enter desired operation')
@@ -26,7 +48,7 @@ if __name__ == '__main__':
 			words = op.split()
 			if op == 'open all':
 				print("opening all doors and windows")
-				openAll()
+				openAll()C
 			elif op == 'close all':
 				print("closing all doors and windows")
 				closeAll()
@@ -59,3 +81,4 @@ if __name__ == '__main__':
 		print(e)
 	finally:
 		GPIO.cleanup()
+		"""
