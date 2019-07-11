@@ -9,7 +9,7 @@ def sequence_random():
 	#TODO easiest sequence
 		#randomize events
 	
-	num_ops = random.randint(1,6)
+	num_ops = random.randint(1,15)
 	for _ in range(num_ops):
             random_motor = random.randint(0,15)
             if motor_states[random_motor] == 'closed':
