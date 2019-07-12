@@ -1,4 +1,4 @@
-
+Date/Time	Lamp_State	Fan_State	Bathroom_Humidity	Bathroom_Temperature	Bedroom1_Humidity	Bedroom1_Temperature	Kitchen_Humidity	Kitchen_Temperature	Diningroom_Humidity	Diningroom_Temperature	Livingroom1_Humidity	Livingroom1_Temperature	Livingroom2_Humidity	Livingroom2_Temperature	Bedroom2_Humidity	Bedroom2_Temperature
 2019-07-11 11:03:06.056008	1	1	74.0	69.8	162.0	51.8	68.0	69.8	66.0	69.8	64.0	69.8	65.0	69.8	61.0	73.4	
 2019-07-11 11:04:09.853149	1	1	73.0	69.8	67.0	71.6	68.0	71.6	66.0	69.8	64.0	69.8	65.0	69.8	60.0	73.4	
 2019-07-11 11:05:13.646322	1	1	68.0	75.2	66.0	73.4	62.0	75.2	66.0	71.6	60.0	73.4	66.0	71.6	54.0	77.0	
