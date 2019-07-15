@@ -9,19 +9,19 @@ import numpy as np
 np.random.seed(2)
 random.seed(2)
 
-data = pd.read_csv("./datasets/combined_data_set3.csv", header=None, skiprows=[0], usecols=(range(1,34)))
+data = pd.read_csv("./datasets/combined_data_set3.csv", header=None, skiprows=[0], usecols=(range(1,33)))
 #data2 = pd.read_csv("HomeB.csv", header=None, skiprows=[0], usecols=(range(17, 34)))
 #frames = [data1, data2]
 #data = pd.concat(frames, axis=1)
 dataset = data.values
 
-num_features = 33
-num_hidden = 64
+num_features = 32
+num_hidden = 256
 num_classes = 1
 batch_size = 16
 time_steps = 10
 
-train_size = int(dataset.shape[0] * 0.80)
+train_size = int(dataset.shape[0] * 0.70)
 
 #  Make dataset random from everywhere
 # rows = np.arange(dataset.shape[0] - time_steps)
@@ -36,17 +36,17 @@ train_size = int(dataset.shape[0] * 0.80)
 train, test = dataset[0:train_size, :], dataset[train_size:len(dataset), :]
 scalar = preprocessing.StandardScaler().fit(train)
 trainX = scalar.transform(train)
-trainY = dataset[1:len(trainX) + 1, 3]
+trainY = dataset[1:len(trainX) + 1, 11]
 testX = scalar.transform(test)
-testY = dataset[len(trainX) + 1:, 3]
+testY = dataset[len(trainX) + 1:, 11]
 
 # train = np.column_stack((trainX, trainY))[:-3, :]
-train = np.column_stack((trainX, trainY))[:, :]
-train = train.reshape(-1, time_steps, 34)
+train = np.column_stack((trainX, trainY))[:-9, :]
+train = train.reshape(-1, time_steps, 33)
 
 testX = testX[:-1]  # make test y same dimesnsions as test
-test = np.column_stack((testX, testY))[:, :]
-test = test.reshape(-1, time_steps, 34)
+test = np.column_stack((testX, testY))[:-7, :]
+test = test.reshape(-1, time_steps, 33)
 
 # np.random.shuffle(test)
 np.random.shuffle(train)
@@ -95,7 +95,7 @@ def lst_model(x):
 def accuracy(x, y, data_size):
     acc = 0
     for i in range(0, data_size):
-        if abs(x[i] - y[i]) < 0.2:
+        if abs(x[i] - y[i]) < 2.0:
             acc += 1
     return float(acc / data_size)
 
@@ -106,7 +106,7 @@ optimizer = tf.train.AdamOptimizer(learning_rate=0.001).minimize(cost)
 
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
-    training_steps = 300
+    training_steps = 1000
     acc_arr_te = []
     acc_arr_tr = []
     loss_arr_te = []
@@ -141,7 +141,7 @@ acc_arr_te = np.array(acc_arr_te)
 acc_arr_tr = np.array(acc_arr_tr)
 loss_arr_te = np.array(loss_arr_te)
 loss_arr_tr = np.array(loss_arr_tr)
-np.save("./LSTM/HomeB/threshold0-2-st10-lr0001-batch16_te_acc.npy", acc_arr_te)
-np.save("./LSTM/HomeB/threshold0-2-st10-lr0001-batch16_tr_acc.npy", acc_arr_tr)
-np.save("./LSTM/HomeB/threshold0-2-st10-lr0001-batch16_te_loss.npy", loss_arr_te)
-np.save("./LSTM/HomeB/threshold0-2-st10-lr0001-batch16_tr_loss.npy", loss_arr_tr)
+np.save("./LSTM/threshold0-2-st10-lr0001-batch16_te_acc.npy", acc_arr_te)
+np.save("./LSTM/threshold0-2-st10-lr0001-batch16_tr_acc.npy", acc_arr_tr)
+np.save("./LSTM/threshold0-2-st10-lr0001-batch16_te_loss.npy", loss_arr_te)
+np.save("./LSTM/threshold0-2-st10-lr0001-batch16_tr_loss.npy", loss_arr_tr)
