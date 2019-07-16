@@ -9,9 +9,9 @@ import numpy as np
 
 
 #fcn_te = np.load("./Fully_connected/Home B/threshold0-2-st10-lr0001-batch16_te_acc.npy")[:300, ...]
-lstm_te = np.load("./LSTM/threshold0-2-st10-lr0001-batch16_te_acc.npy")[:1000, ...]
+lstm_te = np.load("./LSTM/threshold0-2-st10-lr0001-batch16_te_acc.npy")[:300, ...]
 #fcn_tr = np.load("./Fully_connected/Home B/threshold0-2-st10-lr0001-batch16_tr_acc.npy")[:300, ...]
-lstm_tr = np.load("./LSTM/threshold0-2-st10-lr0001-batch16_tr_acc.npy")[:1000, ...]
+lstm_tr = np.load("./LSTM/threshold0-2-st10-lr0001-batch16_tr_acc.npy")[:300, ...]
 # homeA[0, 1] = 0.45
 
 def smooth_data(data, smoothing_weight):
