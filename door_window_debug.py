@@ -99,48 +99,43 @@ def openMotor(pin):
  # 15 : Bedroom 1, 3 ft.
 
 while(True):
+  	try:
+   		while True:
+       		print('Enter desired operation')
+           	op = input().lower()
+          	words = op.split()
+          	if op == 'open all':
+              	print("opening all doors and windows")
+              	openAll()
+        	elif op == 'close all':
+          		print("closing all doors and windows")
+               	closeAll()
+          	elif op == 'open all doors':
+       			print("opening all doors")
+               	openAllDoors()
+          	elif op == 'close all doors':
+          		print("closing all doors")
+               	closeAllDoors()
+           	elif op == 'open all windows':
+            	print("opening all windows")
+              	openAllWindows()
+          	elif op == 'close all windows':
+            	print("closing all windows")
+              	closeAllWindows()
+           	elif words[0] == 'open':
+           		#open based on pin number
+            	print("opening " + motor_names[int(words[1])])
+              	motorOpen(int(words[1]))
+          	elif words[0] == 'close':
+            	#close based on pin number
+              	print("closing " + motor_names[int(words[1])])
+               	motorClose(int(words[1]))
+           	else:
+           		print('Incorrect input.')
     
-    openMotor(0)
-    #openMotor(1)
-    #openMotor(2)
-    #openMotor(3)
-    openMotor(4)
-    openMotor(5)
-    #openMotor(6)
-    
-    openMotor(8)
-    openMotor(9)
-    openMotor(10)
-    openMotor(11)
-    openMotor(12)
-    openMotor(13)
-    openMotor(14)
-    openMotor(15)
-    
-    time.sleep(5)
-    
-    closeMotor(0)
-    #closeMotor(1)
-    #closeMotor(2)
-    #closeMotor(3)
-    closeMotor(4)
-    closeMotor(5)
-    #closeMotor(6)
-    
-    closeMotor(8)
-    closeMotor(9)
-    closeMotor(10)
-    closeMotor(11)
-    closeMotor(12)
-    closeMotor(13)
-    closeMotor(14)
-    closeMotor(15)
-    
-    time.sleep(5)
-"""
-while(True):
-    openMotor(6)
-    time.sleep(3)
-    closeMotor(6)
-    time.sleep(3)
-"""
+    except KeyboardInterrupt:
+    	print("Keyboard interrupt.")
+   	except Exception as e: 
+  		print(e)
+   	finally:
+   		GPIO.cleanup()
