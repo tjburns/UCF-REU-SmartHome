@@ -37,6 +37,9 @@ def turnOnFan(pin):
 # WINDOWS/DOORS
 
 def motorOpen(pin):
+	
+	motor_states[pin] = 'open'
+
 	#doors
     if(pin == 0):
         kit.servo[pin].angle = 180
@@ -70,9 +73,13 @@ def motorOpen(pin):
     elif(pin == 15):
         kit.servo[pin].angle = 159
     else:
+    	print("ERROR: Pin number out of range")
         kit.servo[pin].angle = 180
 		
 def motorClose(pin):
+	
+	motor_states[pin] = 'closed'
+
 	#doors
     if(pin == 0):
         kit.servo[pin].angle = 60
@@ -106,6 +113,7 @@ def motorClose(pin):
     elif(pin == 15):
         kit.servo[pin].angle = 46
     else:
+    	print("ERROR: Pin number out of range")
         kit.servo[pin].angle = 60
 		
 # Methods assume the pin in use has been setup
