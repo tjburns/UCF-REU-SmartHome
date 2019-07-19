@@ -95,7 +95,7 @@ def lst_model(x):
 def accuracy(x, y, data_size):
     acc = 0
     for i in range(0, data_size):
-        if abs(x[i] - y[i]) < 2.0:
+        if abs(x[i] - y[i]) < 5.5:
             acc += 1
     return float(acc / data_size)
 

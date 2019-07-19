@@ -5,7 +5,7 @@ import random
 
 from pin_control import *
 
-MOTOR_STATE_FILE = "motor_states_NormalDay.txt"
+MOTOR_STATE_FILE = "random_dataset4.txt"
 
 def write_motor_states():
 	with open(MOTOR_STATE_FILE, "a") as motors:
@@ -45,7 +45,21 @@ def SEQUENCE_random():
 		for i in range(0,300):
 			print('Next action in: ' + str(i)+'/300', flush=True)
 			time.sleep(1)
-                
+			
+def demo():
+	closeAll()
+	while True:
+		
+		HELPER_random_choose_motors()
+		
+		write_motor_states()
+		
+		print()
+		
+		for i in range(0, 30):
+			print('Next action in: ' + str(i)+'/30', flush = True)
+			time.sleep(1)
+
 def SEQUENCE_NormalDay():
 	#TODO write method simulating a normal day:
 	# - since 2 bedroom home imagine a couple with one child

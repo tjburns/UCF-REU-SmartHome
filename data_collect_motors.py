@@ -73,4 +73,6 @@ if __name__ == '__main__':
     
     # perform desired scenario for data collection -- basically just the runner file with the debug loop method if necessary
     
-    SEQUENCE_aNormalDay()
+    #SEQUENCE_aNormalDay()
+    
+    demo()

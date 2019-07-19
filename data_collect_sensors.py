@@ -71,7 +71,7 @@ fan_state = 1
 try:
     while(True):
         #getTemp(18)
-        with open("random_dataset2.txt", "a") as datafile:
+        with open("random_dataset4.txt", "a") as datafile:
             datafile.write('\n')
             datafile.write(str(datetime.now()) + '\t')
             
@@ -103,7 +103,7 @@ try:
             time.sleep(1)
             seconds += 1
             
-            if seconds % 3600 == 0:
+            if seconds % 900 == 0:
                 if lamp_state == 0:
                     print("turning on lamp")
                     turnOnLamp(21)
@@ -113,7 +113,7 @@ try:
                     turnOffLamp(21)
                     lamp_state = 0
                     
-            if seconds % 1800 == 0:
+            if seconds % 300 == 0:
                 if fan_state == 0:
                     print("turning on fan")
                     turnOnFan(20)
