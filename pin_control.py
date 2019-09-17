@@ -8,14 +8,44 @@ from adafruit_servokit import ServoKit
 # 8 for FeatherWing, 16 for Shield/HAT/Bonnet.
 kit = ServoKit(channels=16)
 
+# Each Pulse Width Modulation (PWM) Pin corresponds to a motor
+ # PWM 0 - 6 : doors
+ # PWM 8 - 15 : windows
+ # 00 : Bedroom 2 - Bathroom    | 'bedroom2 - bathroom door'
+ # 01 : Bedroom 1 - Living Rm   | 'bedroom1 - living room door'
+ # 02 : Living Rm - Kitchen     | 'living room - kitchen door'
+ # 03 : Living Rm - Bathroom    | 'living - bathroom door'
+ # 04 : Bedroom 1 - Bathroom    | 'bedroom1 - bathroom door'
+ # 07 : Living Rm - Front Door  | 'living room front door'
+ # 06 : Bedroom 1 - Back Door   | 'bedroom1 back door'
+ 
+ # 08 : Bedroom 1, 2 ft.    | 'bedroom1 - 2ft window'
+ # 09 : Living Rm, 2 ft.    | 'living room - 2ft window'
+ # 10 : Bedroom 2, 2 ft.    | 'bedroom2 - 2ft window'
+ # 11 : Kitchen, 2 ft.      | 'kitchen - 2ft window'
+ # 12 : Bedroom 2, 3 ft.    | 'bedroom2 - 3ft window'
+ # 13 : Living Rm, 3 ft.    | 'living room - 3ft window'
+ # 14 : Kitchen, 3 ft.      | 'kitchen - 3ft window'
+ # 15 : Bedroom 1, 3 ft.    | 'bedroom1 - 3ft window'
+
 # Dictionary containing named doors and windows and their respective pins
 motor_names = {0:'bedroom2 - bathroom door', 1:'bedroom1 - living room door', 2:'living room - kitchen door',
                3:'living - bathroom door', 4:'bedroom1 - bathroom door', 5:'nothing', 6:'bedroom1 back door',
                7:'living room front door', 8:'bedroom1 - 2ft window', 9:'living room - 2ft window', 10:'bedroom2 - 2ft window',
                11:'kitchen - 2ft window', 12:'bedroom2 - 3ft window', 13:'living room - 3ft window', 14:'kitchen - 3ft window',
                15:'bedroom1 - 3ft window'}
+motor_names_pinRef =  {'bedroom2 - bathroom door':0, 'bedroom1 - living room door':1, 'living room - kitchen door':2,
+                       'living - bathroom door':3, 'bedroom1 - bathroom door':4, 'nothing':5, 'bedroom1 back door':6,
+                       'living room front door':7, 'bedroom1 - 2ft window':8, 'living room - 2ft window':9, 'bedroom2 - 2ft window':10,
+                       'kitchen - 2ft window':11, 'bedroom2 - 3ft window':12, 'living room - 3ft window':13, 'kitchen - 3ft window':14,
+                       'bedroom1 - 3ft window':15}
+
 motor_states = {0:'closed', 1:'closed', 2:'closed', 3:'closed', 4:'closed', 5:'closed', 6:'closed', 7:'closed', 
 				8:'closed', 9:'closed', 10:'closed', 11:'closed', 12:'closed', 13:'closed', 14:'closed', 15:'closed'}
+motor_states_pinRef = {'bedroom2 - bathroom door':'closed', 'bedroom1 - living room door':'closed', 'living room - kitchen door':'closed', 'living - bathroom door':'closed', 
+                        'bedroom1 - bathroom door':'closed', 'nothing':'closed', 'bedroom1 back door':'closed', 'living room front door':'closed', 
+                        'bedroom1 - 2ft window':'closed', 'living room - 2ft window':'closed', 'bedroom2 - 2ft window':'closed', 'kitchen - 2ft window':'closed',
+                        'bedroom2 - 3ft window':'closed', 'living room - 3ft window':'closed', 'kitchen - 3ft window':'closed', 'bedroom1 - 3ft window':'closed'}
 
 
 # LAMP

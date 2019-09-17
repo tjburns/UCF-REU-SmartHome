@@ -19,7 +19,7 @@ kit = ServoKit(channels=16)
  
  # 08 : Bedroom 1, 2 ft.
  # 09 : Living Rm, 2 ft.
- # 10 : Bedroom 2, 2 ft
+ # 10 : Bedroom 2, 2 ft.
  # 11 : Kitchen, 2 ft.
  # 12 : Bedroom 2, 3 ft.
  # 13 : Living Rm, 3 ft.
