@@ -27,17 +27,17 @@ kit = ServoKit(channels=16)
  # 15 : Bedroom 1, 3 ft.
 
 while(True):
-  	try:
-   		while True:
-       		print('Enter desired operation')
-           	op = input().lower()
-          	words = op.split()
-          	if op == 'open all':
-              	print("opening all doors and windows")
-              	openAll()
+	try:
+		while True:
+    		print('Enter desired operation')
+    		op = input().lower()
+    		words = op.split()
+    		if op == 'open all':
+     			print("opening all doors and windows")
+     			openAll()
         	elif op == 'close all':
           		print("closing all doors and windows")
-               	closeAll()
+          		closeAll()
           	elif op == 'open all doors':
        			print("opening all doors")
                	openAllDoors()
@@ -61,7 +61,7 @@ while(True):
            	else:
            		print('Incorrect input.')
     
-    except KeyboardInterrupt:
+   	except KeyboardInterrupt:
     	print("Keyboard interrupt.")
    	except Exception as e: 
   		print(e)
