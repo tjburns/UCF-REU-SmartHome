@@ -28,44 +28,44 @@ from sequences import *
  # 14 : Kitchen, 3 ft.
  # 15 : Bedroom 1, 3 ft.
 def debug_loop():
-	try:
-		while True:
-			print('Enter desired operation')
-			op = input().lower()
-           	words = op.split()
-           	if op == 'open all':
-				print("opening all doors and windows")
-				openAll()
-           	elif op == 'close all':
-           		print("closing all doors and windows")
-             	closeAll()
-       		elif op == 'open all doors':
-           		print("opening all doors")
-              	openAllDoors()
-           	elif op == 'close all doors':
-          		print("closing all doors")
-             	closeAllDoors()
-          	elif op == 'open all windows':
-              	print("opening all windows")
-             	openAllWindows()
-           	elif op == 'close all windows':
-            	print("closing all windows")
-              	closeAllWindows()
-        	elif words[0] == 'open':
-            	#open based on pin number
-             	print("opening " + motor_names[int(words[1])])
-             	motorOpen(int(words[1]))
-         	elif words[0] == 'close':
-             	#close based on pin number
-              	print("closing " + motor_names[int(words[1])])
-              	motorClose(int(words[1]))
-          	else:
-               	print('Incorrect input.')
+    try:
+        while True:
+            print('Enter desired operation')
+            op = input().lower()
+            words = op.split()
+            if op == 'open all':
+                print("opening all doors and windows")
+                openAll()
+            elif op == 'close all':
+                print("closing all doors and windows")
+                closeAll()
+            elif op == 'open all doors':
+                print("opening all doors")
+                openAllDoors()
+            elif op == 'close all doors':
+                print("closing all doors")
+                closeAllDoors()
+            elif op == 'open all windows':
+                print("opening all windows")
+                openAllWindows()
+            elif op == 'close all windows':
+                print("closing all windows")
+                closeAllWindows()
+            elif words[0] == 'open':
+                #open based on pin number
+                print("opening " + motor_names[int(words[1])])
+                motorOpen(int(words[1]))
+            elif words[0] == 'close':
+                #close based on pin number
+                print("closing " + motor_names[int(words[1])])
+                motorClose(int(words[1]))
+            else:
+                print('Incorrect input.')
     
-	except KeyboardInterrupt:
-		print("Keyboard interrupt.")
-	except Exception as e: 
-		print(e)
+    except KeyboardInterrupt:
+        print("Keyboard interrupt.")
+    except Exception as e: 
+        print(e)
 
 if __name__ == '__main__':
     
